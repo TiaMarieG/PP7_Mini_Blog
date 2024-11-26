@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini Blog</title>
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+    <h1>Create a New Post</h1>
+    <div id="form-entry">
+        <form id="blog-form" method="POST" action="/submit">
+            <input type="text" name="author" placeholder="Author">
+            <input type="text" name="title" placeholder="Title">
+            <textarea name="content" placeholder="Content"></textarea>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+</html>

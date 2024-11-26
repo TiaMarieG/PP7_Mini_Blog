@@ -1,0 +1,51 @@
+* {
+	Box-sizing: border-box;
+}
+
+body {
+    margin: auto;
+    width: 75%; 
+}
+
+h1 {
+    text-align: center;
+}
+
+
+#blog-form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+}
+
+#blog-form * {
+    width: 85%;
+    border-radius: .25rem;
+    margin: auto;
+}
+
+input {
+    height: 20px;
+}
+
+button {
+    background-color: green;
+    color: white;
+    border: none;
+    border-radius: .25rem;
+}
+
+
+#form-entry-box{
+    padding: 20px 0;
+    width: 75%;
+    margin: 0 auto;
+    border-radius: .25rem;
+}
+
+.blog-entries{
+    padding: 10px;
+    margin: 10px auto;
+    border-radius: .25rem;
+}
