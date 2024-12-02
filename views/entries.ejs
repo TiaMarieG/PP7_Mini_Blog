@@ -9,25 +9,23 @@
 </head>
 
 <body>
-    <h1>All Posts</h1>
-    <% if (posts.length !==0){ %>
-        <% for (let i=0; i < posts.length; i++){ %>
-            <div class="blog-entries">
-                <h2>
-                    <%= posts[i].title %>
-                </h2>
-                <p>
-                    <%= posts[i].content %>
-                </p>
-                <p>Author: <%= posts[i].author %>
-                </p>
-            </div>
+    <main>
+        <% if (posts.length > 0) { %>
+            <% posts.forEach(post => { %>
+                <div class="blog-entry">
+                    <p>Title: <%= post.title %></h2>
+                    <p>Content: <%= post.content %></p>
+                    <p>Author: <%= post.author %></p>
+                    </div>
+            <% }); %>
+        <% } else { %>
+            <p>No Posts Found</p>
+        <% } %>
+    </main>
 
-            <% } %>
-                <% } else { %>
-                    <p>No Posts Found</p>
-                    <% } %>
-                        <a href="/">Create a New Post</a>
+    <footer>
+        <a href="/">Create a New Post</a>
+    </footer>
 
 </body>
 

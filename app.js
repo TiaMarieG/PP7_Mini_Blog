@@ -48,7 +48,7 @@ app.get('/', (req, res) => {
 });
 
 app.get('/entries', (req, res) => {
-    res.render('entries', {posts: posts});
+    res.render('entries', {post: data});
 })
 
 app.post('/submit', async (req, res) => {
