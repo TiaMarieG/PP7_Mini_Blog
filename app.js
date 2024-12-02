@@ -44,11 +44,15 @@ app.set('view engine', 'ejs');
 // e.g. jshmo.greenriverdev.com/reservation-app/
 app.get('/', (req, res) => {
     // Return home page
-    res.render('home');
+    res.render('home', { data: {}, errors: [] });
 });
 
-app.get('/entries', (req, res) => {
-    res.render('entries', {post: data});
+app.get('/entries', async (req, res) => {
+
+    const conn = await connect();
+    const posts = await conn.query ('SELECT * FROM posts ORDER BY created_at DESC');
+
+    res.render('entries', {posts: posts});
 })
 
 app.post('/submit', async (req, res) => {
@@ -61,12 +65,12 @@ app.post('/submit', async (req, res) => {
     
         //Don't want people to be able to submit a string with a bunch of white spaces
         //Use .trim
-        if (data.author.trim() === "" || data.author.length <= 5) {
+        if (data.author.trim() === "") {
             isValid = false;
             errors.push("Author is required");
         }
     
-        if (data.title.trim() === "" || data.title.length <= 5) {
+        if (data.title.trim() === "" ) {
             isValid = false;
             errors.push("Title is required");
         }
