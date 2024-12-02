@@ -66,13 +66,15 @@ app.post('/submit', async (req, res) => {
         //Don't want people to be able to submit a string with a bunch of white spaces
         //Use .trim
         if (data.author.trim() === "") {
-            isValid = false;
-            errors.push("Author is required");
+            isValid = true;
+            data.author = "Null";
         }
+
+        let trimmedTitle = data.title.trim();
     
-        if (data.title.trim() === "" ) {
+        if (trimmedTitle === "" || trimmedTitle.length < 5) {
             isValid = false;
-            errors.push("Title is required");
+            errors.push("Title greater than 5 characters is required");
         }
     
         if (data.content.trim() === "") {

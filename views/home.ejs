@@ -10,9 +10,9 @@
     <h1>Create a New Post</h1>
     <div id="form-entry">
         <form id="blog-form" method="POST" action="/submit">
-            <input type="text" name="author" placeholder="Author">
-            <input type="text" name="title" placeholder="Title">
-            <textarea name="content" placeholder="Content"></textarea>
+            <input type="text" name="author" placeholder="Author" value="<%= data.author %>">
+            <input type="text" name="title" placeholder="Title" value="<%= data.title %>">
+            <textarea name="content" placeholder="Content" value="<%= data.content %>"></textarea>
 
             <% if (errors) { %>
                 <ul class="errors">
