@@ -12,7 +12,7 @@
         <form id="blog-form" method="POST" action="/submit">
             <input type="text" name="author" placeholder="Author" value="<%= data.author %>">
             <input type="text" name="title" placeholder="Title" value="<%= data.title %>">
-            <textarea name="content" placeholder="Content" value="<%= data.content %>"></textarea>
+            <textarea name="content" placeholder="Content"></textarea>
 
             <% if (errors) { %>
                 <ul class="errors">
